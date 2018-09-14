@@ -22,6 +22,9 @@ function varargout = Exp(Operation,Global,input)
             PopObj = Cal(PopDec);
             
             PopCon = [];
+            if Global.evaluated == Global.evaluation - Global.N
+                save('5Aims', 'PopObj')
+            end
             
             varargout = {input,PopObj,PopCon};
         case 'PF'
